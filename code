@@ -21,5 +21,5 @@ one_a_tag = soup.findAll('a')[26]
 # extracting the actual link
 link = one_a_tag['href']
 print(link)
-# here you get a link right to the .txt file
+# here you get what's in the .txt file
 # and im stuck here cause using 'a' tag isn't an option, way too many of em there, didn't come up with a better tag 
