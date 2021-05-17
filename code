@@ -1,0 +1,25 @@
+import requests 
+import urllib.request
+import time
+from bs4 import BeautifulSoup
+# setting the url
+url = 'https://www.celestrak.com/NORAD/elements'
+# connecting to the url
+response = requests.get(url)
+print(response)
+# parsing html and saving to beautifulsoup object
+soup = BeautifulSoup(response.text, "html.parser")
+print(soup)
+# gonna get tons of data from the website here
+
+# locating all 'a' tags
+soup.findAll('a')
+
+# first txt data file which is located on line 26
+one_a_tag = soup.findAll('a')[26]
+
+# extracting the actual link
+link = one_a_tag['href']
+print(link)
+# here you get a link right to the .txt file
+# and im stuck here cause using 'a' tag isn't an option, way too many of em there, didn't come up with a better tag 
